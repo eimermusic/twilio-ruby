@@ -18,9 +18,10 @@ module Twilio
       # +params+ hash will be converted into attributes on the instantiated
       # object.
       def initialize(uri, client, params = {})
-        @uri, @client = uri, client
+        @uri, @client, @params = uri, client, params
         set_up_properties_from params
       end
+      attr_reader :params
 
       def inspect # :nodoc:
         "<#{self.class} @uri=#{@uri}>"
